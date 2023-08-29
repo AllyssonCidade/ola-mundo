@@ -22,7 +22,7 @@ export default function Post() {
     }
 
     const PostsRecomendados = posts
-        .flter((post) => post.id !== Number(parametros.id))
+        .filter((post) => post.id !== Number(parametros.id))
         .sort((a,b) => b.id - a.id)
         .slice(0,4)
 
