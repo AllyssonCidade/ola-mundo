@@ -35,7 +35,7 @@ export default function Post() {
                 <div className="post-markdown-container">
                     <ReactMarkdown>
                         {post.texto}
-                    </ReactMarkdown>
+                    </ReactMarkdown>    
                 </div>
             <h2 className={styles.tituloOutrosPosts}>
                 Outros posts que você pode gostar:
@@ -43,7 +43,7 @@ export default function Post() {
             <ul className={styles.postsRecomendados}>
                 {PostsRecomendados.map((post) =>(
                     <li key={post.id}>
-                        <PostCard post={post} />
+                        <PostCard post={post} textoBotao={"Ler"}/>
                     </li>
                 ))}
 
