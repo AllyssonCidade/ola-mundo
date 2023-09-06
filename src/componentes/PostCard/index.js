@@ -1,22 +1,36 @@
-import { Link } from 'react-router-dom'
 import styles from './Post.module.css'
 import BotaoPrincipal from 'componentes/BotaoPrincipal'
 import { AiFillCloseCircle } from "react-icons/ai";
+import { useState } from 'react';
 
 
-export default function PostCard({ post, textoBotao, aoDeletar }) {
+
+export default function PostCard({ post, textoBotao, showDeleteButton }) {
+ const [deletarPost, setDeletarPost] = useState(false);
+
+    function aoDeletar() {
+        setDeletarPost(true);
+    }
+
+    if (deletarPost) {
+        return null;
+    }
+
+
     return (
-        <Link to={`/posts/${post.id}`}>
+        <div >
             <div className={styles.post}>
-                <AiFillCloseCircle className={styles.deletar} onClick={aoDeletar}/>
+                {showDeleteButton && <AiFillCloseCircle className={styles.deletar} onClick={aoDeletar} />}
                 <img
                     className={styles.capa}
                     src={`/posts/${post.id}/capa.png`}
                     alt='imagem de capa do post'
                 />
                 <h2 className={styles.titulo}>{post.titulo}</h2>
-                <BotaoPrincipal>{textoBotao}</BotaoPrincipal>
+                <BotaoPrincipal to={`/posts/${post.id}`}>{textoBotao}</BotaoPrincipal>
             </div>
-        </Link>
+        </div>
     )
 }
+
+

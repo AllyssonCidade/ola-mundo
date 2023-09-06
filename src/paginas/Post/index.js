@@ -1,4 +1,5 @@
-import { Route, Routes, useParams } from "react-router-dom"
+
+import { useParams } from "react-router-dom"
 import posts from "json/posts.json"
 import PostModelo from "componentes/PostModelo";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -11,7 +12,6 @@ import styles from './Post.module.css'
 
 export default function Post() {
 
-
     const parametros = useParams();
 
     const post = posts.find((post) => {
@@ -23,8 +23,8 @@ export default function Post() {
 
     const PostsRecomendados = posts
         .filter((post) => post.id !== Number(parametros.id))
-        .sort((a,b) => b.id - a.id)
-        .slice(0,4)
+        .sort((a, b) => b.id - a.id)
+        .slice(0, 4)
 
     return (
         <PaginaPadrao>
@@ -35,19 +35,19 @@ export default function Post() {
                 <div className="post-markdown-container">
                     <ReactMarkdown>
                         {post.texto}
-                    </ReactMarkdown>    
+                    </ReactMarkdown>
                 </div>
-            <h2 className={styles.tituloOutrosPosts}>
-                Outros posts que você pode gostar:
-            </h2>
-            <ul className={styles.postsRecomendados}>
-                {PostsRecomendados.map((post) =>(
-                    <li key={post.id}>
-                        <PostCard post={post} textoBotao={"Ler"}/>
-                    </li>
-                ))}
+                <h2 className={styles.tituloOutrosPosts}>
+                    Outros posts que você pode gostar:
+                </h2>
+                <ul className={styles.postsRecomendados}>
+                    {PostsRecomendados.map((post) => (
+                        <li key={post.id}>
+                            <PostCard post={post} textoBotao={"Ler"} />
+                        </li>
+                    ))}
 
-            </ul>
+                </ul>
             </PostModelo>
         </PaginaPadrao>
 

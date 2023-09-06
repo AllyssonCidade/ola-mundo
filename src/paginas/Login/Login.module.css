@@ -27,7 +27,7 @@
     border-radius: 20px;
 }
 
-.login__input{
+.login__input {
     margin-bottom: 5vh;
     margin-top: 1vh;
     border-radius: 20px;
@@ -56,20 +56,22 @@
 }
 
 @media screen and (max-width:320px) {
-.login__form {
-    width: 90vw;
-    padding: 5vh 5px 5vh 5px;
-}
-.login__input {
-    width: 100%;
-}
+    .login__form {
+        width: 95%;
+        padding: 5vh 5px 5vh 5px;
+    }
+
+    .login__input {
+        width: 100%;
+    }
 }
 @media screen and (max-width:768px) {
-.login__form {
-    width: 60vw;
-    padding: 5vh 5px 5vh 5px;
-}
-.login__input {
-    width: 100%;
-}
+    .login__form {
+        width: 60vw;
+        padding: 5vh 5px 5vh 5px;
+    }
+
+    .login__input {
+        width: 100%;
+    }
 }
