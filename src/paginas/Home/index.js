@@ -1,10 +1,8 @@
 import styles from './Home.module.css';
-import posts from "json/posts.json"
-import PostCard from 'componentes/PostCard';
-import aoDeletar from '../../componentes/DeletarPost';
+import posts from "../../json/posts.json"
+import PostCard from '../../componentes/PostCard';
 
 export default function Home() {
-    aoDeletar()
     return (
 
         <ul className={styles.posts}>

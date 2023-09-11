@@ -1,12 +1,11 @@
-
 import { useParams } from "react-router-dom"
-import posts from "json/posts.json"
-import PostModelo from "componentes/PostModelo";
+import posts from "../../json/posts.json"
+import PostModelo from "../../componentes/PostModelo";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import "./Post.css"
-import NaoEncontrada from "paginas/NaoEncontrada";
-import PaginaPadrao from "componentes/PaginaPadrao";
-import PostCard from "componentes/PostCard";
+import NaoEncontrada from "../../paginas/NaoEncontrada";
+import PaginaPadrao from "../../componentes/PaginaPadrao";
+import PostCard from "../../componentes/PostCard";
 import styles from './Post.module.css'
 
 
